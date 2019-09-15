@@ -7,4 +7,20 @@ This repository contains Jupyter notebook assignments for Princeton's MAE345 cla
 - All data provided / collected for use in assignments resides in `quad_data`.
 - The script `install_dependencies.sh` will install the necessary dependencies for running the software for the class on a fresh Ubuntu 18.04 installation. It will also build the firmware for the Bitcraze Crazyflie 2.1 we have modified for the class that is available from [this repository](https://github.com/irom-lab/crazyflie-firmware).
 
-For those not familiar with Linux / Ubuntu, a VirtualBox image will be provided that is already configured for the class.
+# Virtual Box
+
+For those not used to using with Python and Linux, we are providing a Virtual Box image that already has the software and libraries installed for working with the Crazyflie. While you can complete the assignments with your own OS / environment, the instructors will not be able to provide help for technical issues you may run into with your own setup. To that end, we encourage using the Virtual Box image.
+
+## Setting Up
+
+To use the image, complete the following instructions:
+
+1. Download and install [Virtual Box](https://www.virtualbox.org/) for your OS.
+2. Download the [OVA image](https://drive.google.com/file/d/1SMuKvwyBaQGdplbzOviqDJTqrKvKpgVu/view?usp=sharing) from our Google Drive.
+3. Open Virtual Box. Click on `File -> Import Appliance`. Select the OVA image file you downloaded and hit `Next >`. On the next screen do not alter any of the options, simply hit `Import`.
+
+You can start the virtual machine by double clicking it in the menu. Once it boots, the password for the account `mae345` (the only account) is, again, `mae345`.
+
+## Working on Assignments
+
+To work on an assignment, open the `Terminal` application. Enter the command `cd MAE345-Student` followed by the command `git pull`, which will update the code to the latest made available by the instructors. Then, enter `jupyter notebook`. This will open the Jupyter interface in your web browser, where you will work on your Python assignments.
