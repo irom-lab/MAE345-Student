@@ -144,7 +144,7 @@ class Quadrotor(ABC):
         phi = state[3]
         theta = state[4]
 
-        wRb = Rot.from_euler('xyz', state[[3, 4, 5]]).as_dcm()
+        wRb = Rot.from_euler('ZYX', state[[5, 4, 3]]).as_dcm()
 
         z_b = wRb[2, :]
         z_w = np.array([0, 0, 1])

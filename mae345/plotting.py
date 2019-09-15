@@ -37,7 +37,7 @@ def _animate(i: int, states: np.ndarray, drawables: [Line3D]) -> [Line3D]:
     :return: The list of modified drawables.
     """
     state = states[:, i]
-    wRb = R.from_euler('xyz', state[[3, 4, 5]] - np.array([0, 0, np.pi]))
+    wRb = R.from_euler('ZYX', state[[5, 4, 3]] - np.array([0, 0, np.pi]))
 
     pt1 = state[0:3] + wRb.apply(np.array([1, 0, 0]))
     pt2 = state[0:3] + wRb.apply(np.array([-1, 0, 0]))
