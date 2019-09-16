@@ -144,11 +144,11 @@ class Quadrotor(ABC):
         phi = state[3]
         theta = state[4]
 
-        wRb = Rot.from_euler('ZYX', state[[5, 4, 3]]).as_dcm()
+        wRb = Rot.from_euler('ZYX', eulers[[5, 4, 3]])).as_dcm()
 
         z_b = wRb[2, :]
         z_w = np.array([0, 0, 1])
-        w_BW = state[9:]#state[9] * wRb[0, :] + state[10] * wRb[1, :] + state[11] * wRb[2, :]
+        w_BW = state[9:]
 
         # Here we compute the change in Euler angles. See slide 9 here:
         # https://alliance.seas.upenn.edu/~meam620/wiki/index.php?n=Main.Schedule?action=download&upname=04_2018_travelocities.pdf
@@ -204,7 +204,7 @@ class Quadrotor(ABC):
                               [0, syp.cos(phi), -syp.sin(phi)],
                               [0, syp.sin(phi) / syp.cos(theta), syp.cos(phi) / syp.cos(theta)]])
 
-            R = (syp.rot_axis1(phi) * syp.rot_axis2(theta) * syp.rot_axis3(psi)).T
+            R = rot_axis3(psi) * rot_axis2(theta) * rot_axis1(phi)
             I = syp.Matrix(self.I)
 
             d_ddot = syp.Matrix([0, 0, -self.gravity]) + R * syp.Matrix([0, 0, u1 / self.mass])
