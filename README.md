@@ -22,7 +22,7 @@ To use the image, complete the following instructions:
 If you are using Linux with secure boot enabled, you may need to go through some extra steps [(see here)](https://askubuntu.com/questions/920689/how-to-fix-modprobe-vboxdrv-error-in-virtualbox?fbclid=IwAR0N6lNVvzv54pQLpqGNtzaIWDqGXNTAL1bbzOIl_DlXxRaNniyxcCySsuw). You will also need to add yourself to the Virtual Box user group on your host machine by running the command `
 sudo usermod -aG vboxusers $USER` in your terminal and restarting your machine. Contact the TAs if you need help.
 
-You can start the virtual machine by double clicking it in the menu. Once it boots, the password for the account `mae345` (the only account) is, again, `mae345`.
+You can start the virtual machine by double clicking it in the menu. Once it boots, the password for the account `mae345` (the only account) is, again, `mae345`. Booting may take a minute or two.
 
 ## Working on Assignments
 
