@@ -179,56 +179,7 @@ class Quadrotor(ABC):
         :return: A pair of matrices (A, B), where A is the state matrix and B
         is the input matrix.
         """
-        if not self._computed_dynamics_jacobian:
-            x, y, z = dynamicsymbols('x y z')
-            phi, theta, psi = dynamicsymbols('phi theta psi')
-            p, q, r = dynamicsymbols('p q r')
-
-            u1, u2, u3, u4 = syp.symbols('u1 u2 u3 u4')
-            t = syp.symbols('t')
-
-            x_dot = syp.diff(x, t)
-            y_dot = syp.diff(y, t)
-            z_dot = syp.diff(z, t)
-
-            state_list = [x, y, z, phi, theta, psi, x_dot, y_dot, z_dot, p, q, r]
-            input_list = [u1, u2, u3, u4]
-            state = syp.Matrix(state_list)
-            input = syp.Matrix(input_list)
-
-            d = syp.Matrix([x, y, z])
-            d_dot = syp.diff(d, t)
-            w_BW = syp.Matrix([p, q, r])
-
-            eTb = syp.Matrix([[1, syp.sin(phi) * syp.tan(theta), syp.cos(phi) * syp.tan(theta)],
-                              [0, syp.cos(phi), -syp.sin(phi)],
-                              [0, syp.sin(phi) / syp.cos(theta), syp.cos(phi) / syp.cos(theta)]])
-
-            R = rot_axis3(psi) * rot_axis2(theta) * rot_axis1(phi)
-            I = syp.Matrix(self.I)
-
-            d_ddot = syp.Matrix([0, 0, -self.gravity]) + R * syp.Matrix([0, 0, u1 / self.mass])
-            euler_dot = eTb * syp.Matrix([p, q, r])
-            w_BW_dot = syp.Matrix(self.invI) * (-w_BW.cross(I * w_BW) + syp.Matrix([u2, u3, u4]))
-
-            dynamics = syp.Matrix([d_dot, euler_dot, d_ddot, w_BW_dot])
-
-            A_helper = syp.lambdify(state_list + input_list,
-                                    syp.simplify(dynamics.jacobian(state)))
-
-            B_helper = syp.lambdify(state_list + input_list,
-                                    syp.simplify(dynamics.jacobian(input)))
-
-            self._A = lambda state_vec, input_vec: \
-                A_helper(*([x for x in state_vec] + [x for x in input_vec]))
-
-            self._B = lambda state_vec, input_vec: \
-                B_helper(*([x for x in state_vec] + [x for x in input_vec]))
-
-            self._computed_dynamics_jacobian = True
-
-        return (self._A(linearize_state, linearize_input),
-                self._B(linearize_state, linearize_input))
+        pass
 
     def hover_state_linearization(self) -> (np.ndarray, np.ndarray):
         """
