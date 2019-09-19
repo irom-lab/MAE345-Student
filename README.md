@@ -19,8 +19,10 @@ To use the image, complete the following instructions:
 2. Download the [OVA image](https://drive.google.com/file/d/1SMuKvwyBaQGdplbzOviqDJTqrKvKpgVu/view?usp=sharing) from our Google Drive.
 3. Open Virtual Box. Click on `File -> Import Appliance`. Select the OVA image file you downloaded and hit `Next >`. On the next screen do not alter any of the options, simply hit `Import`.
 
+If you are using Linux with secure boot enabled, you may need to go through some extra steps [(see here)](https://askubuntu.com/questions/920689/how-to-fix-modprobe-vboxdrv-error-in-virtualbox?fbclid=IwAR0N6lNVvzv54pQLpqGNtzaIWDqGXNTAL1bbzOIl_DlXxRaNniyxcCySsuw). Contact the TAs if you need help.
+
 You can start the virtual machine by double clicking it in the menu. Once it boots, the password for the account `mae345` (the only account) is, again, `mae345`.
 
 ## Working on Assignments
 
-To work on an assignment, open the `Terminal` application. Enter the command `cd MAE345-Student` followed by the command `git pull`, which will update the code to the latest made available by the instructors. Then, enter `jupyter notebook`. This will open the Jupyter interface in your web browser, where you will work on your Python assignments.
+To work on an assignment, open the `Terminal` application. Enter the command `cd MAE345-Student` followed by the command `git pull`, which will update the code to the latest made available by the instructors. Then, enter `jupyter notebook`. This will open the Jupyter interface in your web browser, where you will work on your Python assignments. Then click on `LabX.py` and get started!
