@@ -26,4 +26,9 @@ You can start the virtual machine by double clicking it in the menu. Once it boo
 
 ## Working on Assignments
 
-To work on an assignment, open the `Terminal` application. Enter the command `cd MAE345-Student` followed by the command `git pull`, which will update the code to the latest made available by the instructors. Then, enter `jupyter notebook`. This will open the Jupyter interface in your web browser, where you will work on your Python assignments. Then click on `LabX.py` and get started!
+To work on an assignment, open the `Terminal` application. Enter the command `cd MAE345-Student` followed by the command `git pull`, which will update the code to the latest made available by the instructors. Then, enter `jupyter notebook`. This will open the Jupyter interface in your web browser, where you will work on your Python assignments. Then click on `LabX.py`, where `X` is the assignment number and fill out the specified cells in the notebook. Submission instructions are inside each notebook.
+
+## Accessing New and Updated Assignments
+
+Throughout the course, we will be adding more assignments to this Git repository. The instructors may also need to issue corrections to labs while they are assigned. To update the codebase on your computer, run the command `git fetch --all
+ && git reset --hard origin/master`. **THIS COMMAND WILL OVERWRITE THE ASSIGNMENTS YOU HAVE IN THE FOLDER.** If you want to backup an assignment, copy it to your home directory with the command `cp <filename> ~/` first.
