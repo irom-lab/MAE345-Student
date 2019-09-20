@@ -31,4 +31,4 @@ To work on an assignment, open the `Terminal` application. Enter the command `cd
 ## Accessing New and Updated Assignments
 
 Throughout the course, we will be adding more assignments to this Git repository. The instructors may also need to issue corrections to labs while they are assigned. To update the codebase on your computer, run the command `git fetch --all
- && git reset --hard origin/master`. **THIS COMMAND WILL OVERWRITE THE ASSIGNMENTS YOU HAVE IN THE FOLDER.** If you want to backup an assignment, copy it to your home directory with the command `cp <filename> ~/` first.
+ && git reset --hard origin/master` in the MAE345-Student folder (again, to get there enter `cd MAE345-Student`. **THIS COMMAND WILL OVERWRITE THE ASSIGNMENTS YOU HAVE IN THE FOLDER.** If you want to backup an assignment, copy it to your home directory with the command `cp <filename> ~/` first.
